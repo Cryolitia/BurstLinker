@@ -81,7 +81,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.bilibili"
             artifactId = "burstlinker"
-            version = "0.0.14"
+            version = "0.0.15"
             afterEvaluate {
                 from(components["release"])
             }
