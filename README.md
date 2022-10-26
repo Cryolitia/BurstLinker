@@ -1,5 +1,30 @@
 # BurstLinker
 
+## Use these packages
+
+Add following codes in `settings.gradle`
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/Cryolitia/BurstLinker")
+            credentials {
+                username = "Cryolitia"
+                password = "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"
+            }
+        }
+        //other repositories……
+    }
+}
+```
+
+use `implementation("com.bilibili:burstlinker:0.0.13")` in `dependencies`
+
+Then, just enjoy it! ^_^
+
+---
+
  [ ![Download](https://api.bintray.com/packages/succlz123/maven/burst-linker/images/download.svg) ](https://bintray.com/succlz123/maven/burst-linker/_latestVersion)
 
 Idea from: [square/gifencoder](https://github.com/square/gifencoder)

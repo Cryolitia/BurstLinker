@@ -6,8 +6,8 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        //classpath 'com.novoda:bintray-release:0.9.1'
     }
 }
 
@@ -19,8 +19,8 @@ allprojects {
     afterEvaluate {
         def android = project.extensions.findByName('android') as BaseExtension
         android?.compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
+            sourceCompatibility JavaVersion.VERSION_11
+            targetCompatibility JavaVersion.VERSION_11
         }
     }
     tasks.withType(Javadoc) {
@@ -33,7 +33,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext {
-    burstLinkerVer = '0.0.12'
+/*ext {
+    burstLinkerVer = '0.0.13'
     libs = ['burstLinkerVer': "com.bilibili:$burstLinkerVer"]
-}
+}*/
