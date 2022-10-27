@@ -11,7 +11,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/Cryolitia/BurstLinker")
             credentials {
                 username = "Cryolitia"
-                password = "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"
+                password = "9sb2n1ZvKGNMSzXqd0vIxX4nJJuRQHMOc3pf_phg".reverse()
             }
         }
         //other repositories……
