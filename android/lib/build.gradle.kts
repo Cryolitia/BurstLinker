@@ -10,15 +10,14 @@ plugins {
 }*/
 
 android {
-    compileSdk = 33
+    compileSdk = 36
     //buildToolsVersion '28.0.3'
     namespace = "com.bilibili.burstlinker"
     defaultConfig {
         aarMetadata {
             minCompileSdk = 33
         }
-        minSdk = 14
-        targetSdk = 33
+        minSdk = 21
         //versionCode = 13
         //versionName = "0.0.13"
         //testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
@@ -26,6 +25,11 @@ android {
         // renderscriptTargetApi 26
         // renderscriptSupportModeEnabled true
         // renderscriptNdkModeEnabled true
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
+        }
 
         externalNativeBuild {
             cmake {
@@ -39,11 +43,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         create("debug_native") {
             isJniDebuggable = true
-            isRenderscriptDebuggable = true
         }
     }
     externalNativeBuild {
@@ -78,7 +81,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.bilibili"
             artifactId = "burstlinker"
-            version = "0.0.13"
+            version = "0.0.14"
             afterEvaluate {
                 from(components["release"])
             }
@@ -99,7 +102,7 @@ publishing {
                     }
                     developer {
                         id.set("Cryolitia")
-                        name.set("Cryolitia")
+                        name.set("Cryolitia PukNgae")
                         email.set("Cryolitia@gmail.com")
                     }
                 }

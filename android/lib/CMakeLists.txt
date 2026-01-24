@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.4.1)
+project(BurstLinkerAndroid)
 
 # add_library(cpufeatures STATIC ${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c)
 

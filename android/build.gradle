@@ -1,36 +1,29 @@
-import com.android.build.gradle.BaseExtension
-
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath 'com.android.tools.build:gradle:9.0.0'
         //classpath 'com.novoda:bintray-release:0.9.1'
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
     }
-    afterEvaluate {
-        def android = project.extensions.findByName('android') as BaseExtension
-        android?.compileOptions {
-            sourceCompatibility JavaVersion.VERSION_11
-            targetCompatibility JavaVersion.VERSION_11
+    tasks.withType(Javadoc).tap {
+        configureEach {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('encoding', 'UTF-8')
         }
-    }
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register('clean', Delete) {
+    delete rootProject.getBuildDirectory()
 }
 
 /*ext {

@@ -1,15 +1,18 @@
 package com.bilibili.burstlinker.sample;
 
+import static com.bilibili.burstlinker.BurstLinker.CPU_COUNT;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bilibili.burstlinker.BurstLinker;
 import com.bilibili.burstlinker.GifEncodeException;
@@ -18,8 +21,6 @@ import com.bumptech.glide.Glide;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.bilibili.burstlinker.BurstLinker.CPU_COUNT;
 
 /**
  * Created by succlz123 on 2017/9/7.
